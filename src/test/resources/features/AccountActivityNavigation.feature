@@ -1,33 +1,27 @@
 @Account_Activity_Navigation
-Feature:Navigating to specific accounts	in	Accounts Activity
 
-  Scenario: Saving account redirect
-    Given the user is logged in
-    When the user clicks on Saving link on the Account Summary page
-    Then the "Account Activity" page should displayed
-    And Account drop down should have "Saving" selected
+Feature: Navigating to Accounts Activity
 
-  Scenario: Brokerage account redirect
-    Given the user is logged in
-    When the user clicks on Brokerage link on the Account Summary page
-    Then the "Account Activity" page should displayed
-    And Account drop down should have "Brokerage" selected
+  Background:
+    Given user is on the login page
+    Then user clicks on 'Sign in' button
+    Then user logs in as 'username'
+    
+    Scenario Outline:<Type> account redirect
+      When user clicks on '<Link>' on the link Account Summary Page
+      Then user verifies that the page title is 'Zero - Account Activity'
+      And Account drop down should have '<Option>' selected
+
+      Examples:Data
+#      | Type         | Link         | Option        |
+#      | Savings      | Savings      | Savings       |
+#      | Checking     | Checking     | Checking      |
+#      | Credit Card  | Credit Card  | Credit Card   |
+#      | Loan         | Loan         | Loan          |
 
 
-  Scenario: Checking account redirect
-    Given the user is logged in
-    When the user clicks on Checking link on the Account Summary page
-    Then the "Account Activity" page should displayed
-    And Account drop down should have "Checking" selected
-
-  Scenario: CreditCard account redirect
-    Given the user is logged in
-    When the user clicks on Credit Card link on the Account Summary page
-    Then the "Account Activity" page should displayed
-    And Account drop down should have "Credit Card" selected
-
-  Scenario: Loan account redirect
-    Given the user is logged in
-    When the user clicks on Loan link on the Account Summary page
-    Then the "Account Activity" page should displayed
-    And Account drop down should have "Loan" selected
+          | Link         | Option        |
+          | Savings      | Savings       |
+          | Checking     | Checking      |
+          | Credit Card  | Credit Card   |
+          | Loan         | Loan          |

@@ -24,4 +24,4 @@ Feature: Purchase Foreign Currency
   Scenario: Error message for not entering value
     Given the user accesses the Purchase foreign currency cash tab
     When user tries	to calculate cost without entering a value
-    Then Error message should be displayed
+    Then error message should be displayed

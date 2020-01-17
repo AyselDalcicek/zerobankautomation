@@ -6,10 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features ="src/test/resources/features/",
-        glue= "com/zerobank/step_definitions",
-        dryRun = false,
-       tags = "@negative_test"
+     //   features ="src/test/resources/features/",
+        features ="C:\\Users\\aysel\\IdeaProjects\\zerobankautomation\\src\\test\\resources\\features\\FindTransaction.feature",
+        dryRun = true
+      //  tags = "@Account_Activity"
+
       //  plugin = {"html:target/default-cucumber-reports",
       //  "json:target/cucumber.json"}
 )
